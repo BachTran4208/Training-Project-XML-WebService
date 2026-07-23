@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xsd:schema elementFormDefault="qualified"
+  targetNamespace="http://webservices.ins.com/WsLogServiceExample"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://webservices.ins.com/WsLogServiceExample">
+  <xsd:complexType name="ExampleLogDetail">
+    <xsd:all>
+      <xsd:element minOccurs="0" name="FieldName" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="FieldValue" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="FieldData" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:complexType name="LOGServiceUpdateRequestType">
+    <xsd:all>
+      <xsd:element minOccurs="0" name="ApplicationName" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="AccountName" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="RealmName" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ClientIP" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="GlobalReference" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="LocalReference" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="TotalRecords" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="RequestGUID" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="EnableGovernmentLogging" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="EnableBlindLogging" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="EnableEncryptedLogging" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="EncryptionKeyGroup" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="EnableForwardLog" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="EnableAutoMultiInsert" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="EnableCompressBlobs" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="RawLogPayload" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="LogDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LogDetail" type="tns:ExampleLogDetail"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="LOGServiceUpdateRequest">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element minOccurs="0" name="ApplicationName" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountName" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="RealmName" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="ClientIP" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="GlobalReference" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="LocalReference" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="TotalRecords" type="xsd:int"/>
+        <xsd:element minOccurs="0" name="RequestGUID" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="EnableGovernmentLogging" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="EnableBlindLogging" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="EnableEncryptedLogging" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="EncryptionKeyGroup" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="EnableForwardLog" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="EnableAutoMultiInsert" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="EnableCompressBlobs" type="xsd:boolean"/>
+        <xsd:element minOccurs="0" name="RawLogPayload" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="LogDetails">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="LogDetail" type="tns:ExampleLogDetail"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="LOGServiceUpdateResponseType">
+    <xsd:all>
+      <xsd:element minOccurs="0" name="UpdateResultCode" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="ResponseGUID" type="xsd:string"/>
+    </xsd:all>
+  </xsd:complexType>
+  <xsd:element name="LOGServiceUpdateResponse">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element minOccurs="0" name="UpdateResultCode" type="xsd:int"/>
+        <xsd:element minOccurs="0" name="ResponseGUID" type="xsd:string"/>
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
